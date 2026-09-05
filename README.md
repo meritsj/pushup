@@ -1,4 +1,3 @@
-# pushup
 # 아이폰에 설치하기
 
 파일 5개(`index.html`, `sw.js`, `manifest.webmanifest`, `icon-180.png`, `icon-192.png`, `icon-512.png`)를
