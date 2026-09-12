@@ -29,19 +29,32 @@ body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Go
   padding:7px 11px;border-radius:999px;font-family:inherit}
 .err{padding:11px 13px;border-radius:10px;background:rgba(224,112,95,.13);
   border:1px solid rgba(224,112,95,.4);color:var(--bad);font-size:13px;line-height:1.5;margin-bottom:12px}
-.gauge{margin-bottom:16px}
+.gauge{margin-bottom:14px}
 .gaugetop{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:9px}
 .gnum{font-size:34px;font-weight:300;letter-spacing:-.03em;line-height:1}
 .gnum span{font-size:17px;color:var(--muted)}
 .gsub{font-size:12px;color:var(--muted)}
 .banner{background:rgba(121,180,230,.10);border:1px solid rgba(121,180,230,.32);color:var(--sky);
   border-radius:12px;padding:12px 14px;font-size:13px;line-height:1.6;margin-bottom:12px}
-.timer{display:flex;flex-direction:column;align-items:center;gap:12px;padding:4px 0 20px}
-.ringwrap{position:relative;width:168px;height:168px}
+.start{width:100%;background:var(--amber);color:#12212F;border:none;border-radius:16px;
+  padding:22px;font-size:19px;font-weight:700;font-family:inherit;margin-bottom:14px}
+.start i{display:block;font-style:normal;font-size:12px;font-weight:500;opacity:.75;margin-top:5px}
+/* 자동 진행 화면 */
+.auto{text-align:center;padding:6px 0 4px}
+.aset{font-size:13px;color:var(--muted);letter-spacing:.02em}
+.aname{font-size:27px;font-weight:650;letter-spacing:-.02em;margin:3px 0 16px}
+.ringwrap{position:relative;width:212px;height:212px;margin:0 auto}
 .ringwrap svg{transform:rotate(-90deg)}
 .ringinner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.big{font-size:58px;font-weight:300;line-height:1;letter-spacing:-.04em}
-.small{font-size:13px;color:var(--muted);margin-top:6px}
+.big{font-size:70px;font-weight:200;line-height:1;letter-spacing:-.05em}
+.small{font-size:14px;color:var(--muted);margin-top:8px;letter-spacing:.04em}
+.areps{font-size:32px;font-weight:300;margin:16px 0 4px;letter-spacing:-.02em}
+.anext{font-size:13px;color:var(--muted);min-height:18px}
+.actl{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:22px}
+.actl button{background:none;border:1.5px solid var(--line);color:var(--text);border-radius:12px;
+  padding:15px 2px;font-size:14px;font-family:inherit}
+.actl .go{background:var(--amber);border-color:var(--amber);color:#12212F;font-weight:600}
+.timer{display:flex;flex-direction:column;align-items:center;gap:12px;padding:4px 0 20px}
 .ghost{background:none;border:none;color:var(--muted);font-size:14px;padding:8px 16px;
   font-family:inherit;text-decoration:underline;text-underline-offset:4px}
 .card{background:var(--surface);border:1px solid var(--line2);border-radius:16px;
@@ -135,6 +148,35 @@ body{color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Go
   background:var(--bg);border-top:1px solid var(--line2);padding-bottom:env(safe-area-inset-bottom)}
 .tab{flex:1;background:none;border:none;color:var(--muted);font-size:14px;padding:16px 0 18px;font-family:inherit}
 .tab.on{color:var(--amber)}
+.fig{width:100%;max-width:250px;height:auto;display:block;margin:0 auto}
+.fl{fill:none;stroke:var(--text);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round}
+.fb{stroke:var(--amber);stroke-width:4;stroke-linecap:round}
+.fg{stroke:var(--line);stroke-width:2.5}
+.fr{animation-duration:var(--fd);animation-iteration-count:infinite;animation-timing-function:steps(1,end)}
+.fr1{animation-name:fka}.fr2{animation-name:fkb}.fr3{animation-name:fkc}
+@keyframes fka{0%,24.9%{opacity:1}25%,100%{opacity:0}}
+@keyframes fkb{0%,24.9%{opacity:0}25%,49.9%{opacity:1}50%,74.9%{opacity:0}75%,99.9%{opacity:1}100%{opacity:0}}
+@keyframes fkc{0%,49.9%{opacity:0}50%,74.9%{opacity:1}75%,100%{opacity:0}}
+.cue{font-size:13px;color:var(--muted);line-height:1.6;text-align:center;margin-top:10px;padding:0 4px}
+.figbox{margin-top:14px;padding-top:14px;border-top:1px solid var(--line2)}
+.lead{padding:2px 0 6px}
+.leadnum{font-size:44px;font-weight:200;letter-spacing:-.04em;margin-top:14px;color:var(--sky)}
+@media (prefers-reduced-motion:reduce){.fr{animation:none}.fr1{opacity:1}.fr2,.fr3{opacity:0}}
+.wk{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-top:14px}
+.wkc{background:none;border:1.5px solid var(--line2);border-radius:10px;padding:11px 1px;
+  font-family:inherit;color:var(--muted)}
+.wkc b{display:block;font-size:14px;font-weight:600}
+.wkc i{display:block;font-style:normal;font-size:9px;margin-top:4px}
+.wkc.main{border-color:var(--amber);color:var(--amber)}
+.wkc.light{border-color:var(--sky);color:var(--sky)}
+.wkc.rest{opacity:.5}
+.strk{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;margin:14px 0 10px}
+.sd{height:34px;border-radius:9px;border:1.5px solid var(--line2);display:flex;
+  align-items:center;justify-content:center;font-size:11px;color:var(--muted)}
+.sd.on{background:var(--amber);border-color:var(--amber)}
+.sd.lt{border-style:dashed}
+.sd.rst{border-color:var(--line);opacity:.7}
+.saved{margin-top:12px;font-size:12px;color:var(--sky)}
 button{cursor:pointer}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
@@ -145,15 +187,18 @@ button{cursor:pointer}
 <script>
 "use strict";
 var KEY="pushup100", SPAN=100, PUSH=["pushup","negative"];
-var DAYS=[{n:"일",t:"rest",l:"완전 휴식"},{n:"월",t:"main",l:"메인"},{n:"화",t:"main",l:"메인"},
-{n:"수",t:"light",l:"가벼운 날"},{n:"목",t:"main",l:"메인"},{n:"금",t:"main",l:"메인"},{n:"토",t:"main",l:"메인"}];
+var DN=["일","월","화","수","목","금","토"];
+var LABEL={main:"메인",light:"가벼운 날",rest:"완전 휴식"};
+var CYCLE=["main","light","rest"];
+var WEEK_DEF=["rest","main","main","light","main","main","main"];
 var STAGES=[{to:20,name:"자리 잡기",desc:"짧은 휴식에 적응"},{to:45,name:"볼륨 올리기",desc:"라운드 수를 늘림"},
 {to:70,name:"밀도 올리기",desc:"라운드당 개수를 늘림"},{to:100,name:"100 채우기",desc:"한 자리에서 100개"}];
 var TA=[[1,15],[20,30],[45,50],[70,75],[100,100]], MA=[[1,6],[20,9],[45,14],[70,19],[100,23]];
 var MILES={20:30,45:50,70:75,100:100};
 var BOUNDS={row:{s:2,lo:8,hi:20},squat:{s:2,lo:10,hi:40},crunch:{s:2,lo:8,hi:30},plank:{s:5,lo:15,hi:120}};
-var NAMES={pushup:"클러스터",negative:"네거티브",squat:"스쿼트",crunch:"크런치",plank:"플랭크",row:"로우",test:"최대 테스트"};
+var NAMES={pushup:"클러스터",negative:"네거티브",squat:"스쿼트",crunch:"크런치",plank:"플랭크",row:"밴드 로우",pullapart:"풀어파트",test:"최대 테스트"};
 var RPEN={easy:"가벼움",ok:"알맞음",hard:"버거움",fail:"안 됐음",test:""};
+var PERREP={pushup:2.5,negative:6,squat:2.5,crunch:2,row:2.5,pullapart:1.8};
 
 function iso(d){d=d||new Date();return new Date(d.getTime()-d.getTimezoneOffset()*6e4).toISOString().slice(0,10)}
 function since(a){return a?Math.floor((new Date(iso())-new Date(a))/864e5):0}
@@ -163,22 +208,212 @@ function interp(a,d){if(d<=a[0][0])return a[0][1];for(var i=0;i<a.length-1;i++){
 
 var DEF={v:5,startDate:null,maxPushup:6,bestSession:0,totalPush:0,sessions:0,lastSession:null,lastTest:null,
   squat:{reps:15,sets:3},crunch:{reps:12,sets:3},plank:{reps:25,sets:3},row:{reps:12,sets:3},rowOn:false,
-  comebackLeft:0,streaks:{},lastChange:null,days:{},today:null,log:[]};
+  comebackLeft:0,streaks:{},lastChange:null,days:{},today:null,log:[],countOn:true,week:null,autoRest:true};
 
 function migrate(r){var s=Object.assign({},DEF,r||{});
   ["squat","crunch","plank","row"].forEach(function(k){s[k]=Object.assign({},DEF[k],(r&&r[k])||{})});
   s.days=s.days||{};s.streaks=s.streaks||{};s.log=s.log||[];s.v=5;
+  if(typeof s.countOn!=="boolean")s.countOn=true;
+  if(!Array.isArray(s.week)||s.week.length!==7)s.week=WEEK_DEF.slice();
+  if(typeof s.autoRest!=="boolean")s.autoRest=true;
   if(!s.startDate)s.startDate=iso();return s}
 
-var S,U={tab:"today",rest:null,work:null,sound:true,err:"",msg:"",testVal:"",paste:"",savedAt:null,focus:null};
+var S,U={tab:"today",rest:null,work:null,auto:null,sound:true,err:"",msg:"",testVal:"",paste:"",savedAt:null,focus:null,fig:null};
 try{S=migrate(JSON.parse(localStorage.getItem(KEY)))}catch(e){S=migrate(null)}
 if(!S.today||S.today.date!==iso())S.today={date:iso(),done:{},rpe:{},run:false,minimal:false,counted:false};
 if(S.lastSession&&since(S.lastSession)>=5&&!S.comebackLeft)S.comebackLeft=3;
 
-function save(){try{localStorage.setItem(KEY,JSON.stringify(S));U.savedAt=new Date();U.err=""}
-  catch(e){U.err="저장 실패 — "+(e.message||e)}}
+/* 저장소를 두 군데 씁니다. 하나가 날아가도 다른 하나가 남습니다.
+   둘 다 이 아이폰 안이고, 서버로는 아무것도 나가지 않습니다. */
+var idb=null;
+function idbOpen(){return new Promise(function(res){
+  try{var r=indexedDB.open("p100",1);
+    r.onupgradeneeded=function(){try{r.result.createObjectStore("kv")}catch(e){}};
+    r.onsuccess=function(){idb=r.result;res(idb)};
+    r.onerror=function(){res(null)};r.onblocked=function(){res(null)}}catch(e){res(null)}})}
+function idbPut(txt){if(!idb)return;
+  try{idb.transaction("kv","readwrite").objectStore("kv").put(txt,"state")}catch(e){}}
+function idbGet(){return new Promise(function(res){if(!idb)return res(null);
+  try{var q=idb.transaction("kv","readonly").objectStore("kv").get("state");
+    q.onsuccess=function(){res(q.result||null)};q.onerror=function(){res(null)}}catch(e){res(null)}})}
 
-/* ── 계획 ── */
+function save(){
+  S.ts=Date.now();
+  var txt;try{txt=JSON.stringify(S)}catch(e){U.err="기록을 변환하지 못했습니다";return}
+  var ok=false;
+  try{localStorage.setItem(KEY,txt);ok=true;U.err=""}catch(e){U.err="저장 실패 — "+(e.message||e)}
+  idbPut(txt);
+  if(ok)U.savedAt=new Date()}
+
+/* 하루 운동이 끝나면 그날짜 스냅샷을 따로 남깁니다. 최근 10일치 보관 */
+function snapCount(){var n=0;try{for(var i=0;i<localStorage.length;i++){
+  var k=localStorage.key(i);if(k&&k.indexOf(KEY+".d.")===0)n++}}catch(e){}return n}
+function snapshot(){
+  try{var k=KEY+".d."+iso();
+    if(localStorage.getItem(k))return;
+    localStorage.setItem(k,JSON.stringify(S));
+    var keys=[];for(var i=0;i<localStorage.length;i++){var n=localStorage.key(i);
+      if(n&&n.indexOf(KEY+".d.")===0)keys.push(n)}
+    keys.sort();while(keys.length>10)localStorage.removeItem(keys.shift());
+    U.snapAt=iso()}catch(e){}}
+
+/* 파일로 내보내기 — 아이폰은 공유 시트로 파일 앱에 바로 넣을 수 있습니다 */
+function exportFile(){
+  var name="pushup100-"+iso()+".json",txt=JSON.stringify(S);
+  try{if(navigator.canShare){var f=new File([txt],name,{type:"application/json"});
+    if(navigator.canShare({files:[f]})){navigator.share({files:[f],title:name})
+      .then(function(){U.msg="파일로 저장했습니다";draw()}).catch(function(){});return}}}catch(e){}
+  try{var url=URL.createObjectURL(new Blob([txt],{type:"application/json"}));
+    var a=document.createElement("a");a.href=url;a.download=name;
+    document.body.appendChild(a);a.click();a.remove();
+    setTimeout(function(){URL.revokeObjectURL(url)},1e3);U.msg="파일을 내려받았습니다"}
+  catch(e){U.msg="내보내기에 실패했습니다"}}
+
+/* ══ 소리 ══════════════════════════════════════════════
+   아이폰은 웹오디오가 측면 무음 스위치에 막힙니다.
+   그래서 오실레이터 대신 WAV를 만들어 <audio>로 재생합니다.
+   <audio>는 미디어로 취급돼 무음 스위치를 무시합니다. */
+function wavData(freq,ms,vol){
+  var sr=22050,n=Math.floor(sr*ms/1000),buf=new ArrayBuffer(44+n*2),v=new DataView(buf);
+  function w(o,s){for(var i=0;i<s.length;i++)v.setUint8(o+i,s.charCodeAt(i))}
+  w(0,"RIFF");v.setUint32(4,36+n*2,true);w(8,"WAVE");w(12,"fmt ");
+  v.setUint32(16,16,true);v.setUint16(20,1,true);v.setUint16(22,1,true);
+  v.setUint32(24,sr,true);v.setUint32(28,sr*2,true);v.setUint16(32,2,true);v.setUint16(34,16,true);
+  w(36,"data");v.setUint32(40,n*2,true);
+  for(var i=0;i<n;i++){var t=i/sr,env=Math.min(1,i/120)*Math.min(1,(n-i)/500);
+    v.setInt16(44+i*2,Math.round(Math.sin(2*Math.PI*freq*t)*30000*vol*env),true)}
+  var by=new Uint8Array(buf),bin="";
+  for(var j=0;j<by.length;j++)bin+=String.fromCharCode(by[j]);
+  return "data:audio/wav;base64,"+btoa(bin)}
+
+/* 들리지 않는 루프를 계속 돌려 오디오 세션을 열어둡니다.
+   이게 없으면 아이폰이 세션을 놓아서, 타이머가 내는 소리가 전부 죽습니다.
+   blob: 주소는 아이폰에서 재생이 불안정해 data: 주소로 바꿨습니다. */
+var keep=null;
+function makeKeep(){var a=new Audio(wavData(40,1000,0.0008));
+  a.loop=true;a.preload="auto";a.setAttribute("playsinline","");return a}
+
+var SND={},unlocked=false;
+(function(){
+  var spec={tick:[520,90,.55],done:[660,150,.75],go:[880,180,.85],end:[1046,280,.85]};
+  Object.keys(spec).forEach(function(k){
+    var url=wavData(spec[k][0],spec[k][1],spec[k][2]),pool=[];
+    for(var i=0;i<3;i++){var a=new Audio(url);a.preload="auto";a.setAttribute("playsinline","");pool.push(a)}
+    SND[k]={pool:pool,i:0}})})();
+
+function beep(k){if(!U.sound)return;var s=SND[k];if(!s)return;
+  var a=s.pool[s.i];s.i=(s.i+1)%s.pool.length;
+  try{a.currentTime=0;var p=a.play();if(p&&p.catch)p.catch(function(){})}catch(e){}}
+
+/* 터치 한 번에 오디오 세션과 음성 엔진을 같이 깨웁니다 */
+function unlock(){
+  if(unlocked)return;unlocked=true;
+  try{keep=makeKeep();var kp=keep.play();if(kp&&kp.catch)kp.catch(function(){})}catch(e){}
+  Object.keys(SND).forEach(function(k){SND[k].pool.forEach(function(a){
+    try{a.play().then(function(){a.pause();a.currentTime=0}).catch(function(){})}catch(e){}})});
+  try{var sy=window.speechSynthesis;if(sy){var u=new SpeechSynthesisUtterance("시작");
+    u.lang="ko-KR";u.volume=0.01;sy.speak(u)}}catch(e){}}
+
+var koVoice=null;
+function pickVoice(){try{var vs=window.speechSynthesis.getVoices()||[];
+  for(var i=0;i<vs.length;i++)if(vs[i].lang&&vs[i].lang.toLowerCase().indexOf("ko")===0){koVoice=vs[i];return}}catch(e){}}
+pickVoice();
+try{window.speechSynthesis.onvoiceschanged=pickVoice}catch(e){}
+
+/* cancel() 은 아이폰에서 발화를 죽입니다. 쓰지 않습니다 */
+function say(text){if(!U.sound)return;
+  try{var sy=window.speechSynthesis;if(!sy)return;if(sy.paused)sy.resume();
+    var u=new SpeechSynthesisUtterance(text);u.lang="ko-KR";u.rate=1;u.volume=1;
+    if(koVoice)u.voice=koVoice;sy.speak(u)}catch(e){}}
+
+/* 한국어 고유수사 — 운동 개수는 하나 둘 셋으로 세는 게 자연스럽습니다 */
+var K1=["","하나","둘","셋","넷","다섯","여섯","일곱","여덟","아홉"];
+var K10=["","열","스물","서른","마흔","쉰","예순","일흔","여든","아흔"];
+function knum(n){if(n<=0||n>=100)return String(n);
+  return (K10[Math.floor(n/10)]||"")+(K1[n%10]||"")}
+
+/* 숫자는 조금 빠르게 — 다음 개수를 밀지 않게 */
+function sayNum(t){if(!U.sound)return;
+  try{var sy=window.speechSynthesis;if(!sy)return;if(sy.paused)sy.resume();
+    var u=new SpeechSynthesisUtterance(t);u.lang="ko-KR";u.rate=1.3;u.volume=1;
+    if(koVoice)u.voice=koVoice;sy.speak(u)}catch(e){}}
+
+/* 지금 몇 번째 개수인지 */
+function curRep(e,left){if(e.timed)return 0;
+  var per=Math.max(.4,(e.work-4)/e.reps),i=Math.floor((e.work-left-2)/per)+1;
+  return Math.max(0,Math.min(e.reps,i))}
+
+/* ══ 동작 예시 ═════════════════════════════════════════
+   외부 이미지 없이 SVG 스틱 피겨 3프레임 플립북.
+   p=몸선, c=머리, b=밴드 */
+var FIG={
+pushup:{cue:"몸은 한 줄. 가슴이 주먹 하나 높이까지. 팔꿈치는 45도.",frames:[
+ [["p","54,98 104,70 152,54"],["c",166,46,9],["l",152,54,152,106]],
+ [["p","54,100 104,78 150,66"],["c",164,58,9],["p","150,66 170,88 152,106"]],
+ [["p","54,102 104,86 148,80"],["c",162,72,9],["p","148,80 176,94 152,106"]]]},
+negative:{cue:"내려오는 5초만 씁니다. 올라올 때는 무릎을 대고 올라오세요.",frames:[
+ [["p","54,98 104,70 152,54"],["c",166,46,9],["l",152,54,152,106]],
+ [["p","54,100 104,78 150,66"],["c",164,58,9],["p","150,66 170,88 152,106"]],
+ [["p","54,102 104,86 148,80"],["c",162,72,9],["p","148,80 176,94 152,106"]]]},
+squat:{cue:"엉덩이를 먼저 뒤로. 무릎이 발끝 방향. 허벅지가 바닥과 나란할 때까지.",frames:[
+ [["p","94,106 98,70 100,42"],["l",100,42,102,18],["c",104,9,9],["l",102,22,128,28]],
+ [["p","94,106 112,74 88,54"],["l",88,54,96,28],["c",99,19,9],["l",96,32,124,38]],
+ [["p","94,106 124,80 78,66"],["l",78,66,92,40],["c",96,31,9],["l",92,44,122,50]]]},
+crunch:{cue:"허리는 바닥에 붙인 채 갈비뼈만 골반 쪽으로. 목으로 당기지 않습니다.",frames:[
+ [["p","140,106 116,72 82,96"],["l",82,96,46,98],["c",34,92,9]],
+ [["p","140,106 116,72 82,96"],["l",82,96,48,88],["c",37,80,9]],
+ [["p","140,106 116,72 82,96"],["l",82,96,52,76],["c",42,66,9]]]},
+plank:{cue:"팔꿈치는 어깨 바로 아래. 엉덩이가 솟거나 꺼지지 않게.",frames:[
+ [["p","54,100 104,78 150,66"],["c",164,58,9],["p","150,66 150,104 176,104"]],
+ [["p","54,101 104,81 150,68"],["c",164,60,9],["p","150,68 150,104 176,104"]],
+ [["p","54,100 104,79 150,67"],["c",164,59,9],["p","150,67 150,104 176,104"]]]},
+row:{cue:"손이 아니라 팔꿈치로 당깁니다. 끝에서 견갑골을 붙였다 놓으세요.",frames:[
+ [["l",80,106,78,92],["l",78,92,80,44],["c",83,32,9],["p","80,44 118,50 150,54"],["b",150,54,192,54]],
+ [["l",80,106,78,92],["l",78,92,80,44],["c",83,32,9],["p","80,44 104,54 124,54"],["b",124,54,192,54]],
+ [["l",80,106,78,92],["l",78,92,80,44],["c",83,32,9],["p","80,44 62,56 96,54"],["b",96,54,192,54]]]},
+run:{cue:"대화가 가능한 속도. 발이 몸 바로 아래로 떨어지게. 보폭을 늘리지 마세요.",frames:[
+ [["c",112,26,9],["l",108,36,100,68],["p","100,68 122,86 132,102"],["p","100,68 82,84 66,94"],
+  ["p","106,44 124,54 128,42"],["p","106,44 88,52 82,64"]],
+ [["c",111,24,9],["l",107,34,100,66],["p","100,66 110,86 112,104"],["p","100,66 94,84 84,98"],
+  ["p","106,42 116,54 118,42"],["p","106,42 94,52 88,62"]],
+ [["c",112,26,9],["l",108,36,100,68],["p","100,68 80,86 68,100"],["p","100,68 120,88 132,100"],
+  ["p","106,44 88,54 84,42"],["p","106,44 124,52 130,64"]]]},
+pullapart:{cue:"팔을 편 채 가슴 앞에서 옆으로 벌립니다. 어깨를 으쓱하지 마세요.",ground:false,frames:[
+ [["c",100,26,10],["l",100,36,100,84],["p","86,108 100,84 114,108"],
+  ["p","84,48 88,50 96,52"],["p","116,48 112,50 104,52"],["b",96,52,104,52]],
+ [["c",100,26,10],["l",100,36,100,84],["p","86,108 100,84 114,108"],
+  ["p","84,48 76,50 70,52"],["p","116,48 124,50 130,52"],["b",70,52,130,52]],
+ [["c",100,26,10],["l",100,36,100,84],["p","86,108 100,84 114,108"],
+  ["p","84,48 66,50 46,52"],["p","116,48 134,50 154,52"],["b",46,52,154,52]]]}};
+
+function figSvg(k,dur){
+  var f=FIG[k];if(!f)return"";
+  var out=f.ground===false?"":'<line x1="26" y1="108" x2="174" y2="108" class="fg"/>';
+  f.frames.forEach(function(fr,i){var s="";
+    fr.forEach(function(el){
+      if(el[0]==="p")s+='<polyline points="'+el[1]+'" class="fl"/>';
+      else if(el[0]==="c")s+='<circle cx="'+el[1]+'" cy="'+el[2]+'" r="'+el[3]+'" class="fl"/>';
+      else s+='<line x1="'+el[1]+'" y1="'+el[2]+'" x2="'+el[3]+'" y2="'+el[4]+'" class="'+
+        (el[0]==="b"?"fb":"fl")+'"/>'});
+    out+='<g class="fr fr'+(i+1)+'">'+s+'</g>'});
+  return '<svg class="fig" viewBox="0 0 200 120" style="--fd:'+(dur||2.4)+'s">'+out+'</svg>'}
+
+var lock=null;
+function holdScreen(on){try{if(on&&!lock&&navigator.wakeLock)
+  navigator.wakeLock.request("screen").then(function(l){lock=l}).catch(function(){});
+  else if(!on&&lock){lock.release().catch(function(){});lock=null}}catch(e){}}
+
+/* ══ 계획 ══════════════════════════════════════════════ */
+/* 어제부터 거슬러 실제로 운동한 연속 일수 */
+function streakDays(){var n=0;
+  for(var i=1;i<=20;i++){if((S.days[addD(iso(),-i)]||0)>0)n++;else break}return n}
+/* 요일이 아니라 진행 상황으로 정합니다: 5일 연속하면 쉬고, 3일째는 가볍게 */
+function autoType(){var st=streakDays();
+  return st>=5?"rest":st===2?"light":"main"}
+function dayType(){if(S.autoRest===false){var wd=new Date().getDay();
+  return (S.week&&S.week[wd])||WEEK_DEF[wd]}return autoType()}
+function trainDays(){var w=(S.week||WEEK_DEF),n=0;
+  for(var i=0;i<7;i++)if(w[i]!=="rest")n++;return n}
 function dayNum(){return Math.max(1,Math.min(SPAN,since(S.startDate)+1))}
 function stageIdx(d){for(var i=0;i<STAGES.length;i++)if(d<=STAGES[i].to)return i;return 3}
 function isDeload(){return (Math.floor(since(S.startDate)/7)+1)%5===0}
@@ -190,66 +425,99 @@ function target(day,type){var t=interp(TA,day);if(type==="light")t*=0.6;if(isDel
   if(S.comebackLeft>0)t*=0.6;return Math.max(6,Math.round(t/5)*5)}
 
 function plan(){
-  var day=dayNum(),dt=new Date(),info=DAYS[dt.getDay()],reps=cReps();
+  var day=dayNum(),dt=new Date(),wd=dt.getDay(),tt=dayType();
+  var info={n:DN[wd],t:tt,l:LABEL[tt]},reps=cReps();
   var cb=S.comebackLeft>0,dl=isDeload(),mn=!!S.today.minimal;
   if(mn)return{info:info,day:day,cb:cb,dl:dl,mn:mn,target:reps,
     items:[{k:"pushup",n:"푸쉬업",u:"회",reps:reps,sets:1,rest:cRest()}]};
   if(info.t==="rest")return{info:info,day:day,cb:cb,dl:dl,mn:mn,target:0,items:[]};
   var tg=target(day,info.t),rounds=Math.max(3,Math.ceil(tg/reps));
-  var items=[{k:"pushup",n:"푸쉬업 클러스터",u:"회",reps:reps,sets:rounds,rest:cRest(),
-    note:"짧게 쉬고 바로 다음 라운드 · 총 "+(reps*rounds)+"개"}];
+  var items=[];
+  if(S.rowOn)items.push({k:"pullapart",n:"밴드 풀어파트",u:"회",reps:20,sets:2,rest:30,
+    note:"어깨 앞쪽을 지키는 준비운동"});
+  items.push({k:"pushup",n:"푸쉬업 클러스터",u:"회",reps:reps,sets:rounds,rest:cRest(),
+    note:"짧게 쉬고 바로 다음 라운드 · 총 "+(reps*rounds)+"개"});
   if(S.maxPushup<15&&info.t==="main"&&!cb&&(dt.getDay()===1||dt.getDay()===4))
     items.push({k:"negative",n:"네거티브 푸쉬업",u:"회",reps:5,sets:2,rest:60,note:"5초에 걸쳐 내려오기만"});
-  if(S.rowOn)items.push({k:"row",n:"밴드 로우",u:"회",reps:S.row.reps,sets:S.row.sets,rest:60});
+  if(S.rowOn&&info.t==="main")items.push({k:"row",n:"밴드 로우",u:"회",reps:S.row.reps,
+    sets:S.row.sets,rest:60,note:"미는 만큼 당겨야 어깨가 버팁니다"});
   if(info.t==="main")items.push(
     {k:"squat",n:"맨몸 스쿼트",u:"회",reps:S.squat.reps,sets:S.squat.sets,rest:60},
     {k:"crunch",n:"크런치",u:"회",reps:S.crunch.reps,sets:S.crunch.sets,rest:45},
     {k:"plank",n:"플랭크",u:"초",reps:S.plank.reps,sets:S.plank.sets,rest:45,timed:true});
   return{info:info,day:day,cb:cb,dl:dl,mn:mn,target:tg,items:items}}
 
-/* ── 소리 ── */
-var AC=null,primed=false;
-function wake(){try{if(!AC)AC=new (window.AudioContext||window.webkitAudioContext)();
-  if(AC.state==="suspended")AC.resume()}catch(e){}
-  if(!primed){primed=true;try{var u=new SpeechSynthesisUtterance(" ");u.volume=0;speechSynthesis.speak(u)}catch(e){}}}
-function tone(f,dur,vol,dl){if(!U.sound)return;dur=dur||.12;vol=vol||.16;dl=dl||0;
-  try{wake();if(!AC)return;var t=AC.currentTime+dl,o=AC.createOscillator(),g=AC.createGain();
-  o.type="sine";o.frequency.value=f;g.gain.setValueAtTime(1e-4,t);
-  g.gain.exponentialRampToValueAtTime(vol,t+.01);g.gain.exponentialRampToValueAtTime(1e-4,t+dur);
-  o.connect(g);g.connect(AC.destination);o.start(t);o.stop(t+dur+.02)}catch(e){}}
-function say(x){if(!U.sound)return;try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(x);
-  u.lang="ko-KR";speechSynthesis.speak(u)}catch(e){}}
-
-/* ── 화면 꺼짐 방지 ── */
-var lock=null;
-function holdScreen(on){try{if(on&&!lock&&navigator.wakeLock)
-  navigator.wakeLock.request("screen").then(function(l){lock=l}).catch(function(){});
-  else if(!on&&lock){lock.release().catch(function(){});lock=null}}catch(e){}}
-
-/* ── 동작 ── */
-function completeSet(it){
-  var cur=(S.today.done[it.k]||0)+1;
-  S.today.done[it.k]=cur;S.lastSession=iso();
-  if(PUSH.indexOf(it.k)>=0){S.totalPush=(S.totalPush||0)+it.reps;
-    var dt=(S.days[iso()]||0)+it.reps;S.days[iso()]=dt;
+/* ══ 기록 ══════════════════════════════════════════════ */
+function recordSet(k,reps){
+  S.today.done[k]=(S.today.done[k]||0)+1;S.lastSession=iso();
+  if(PUSH.indexOf(k)>=0){S.totalPush=(S.totalPush||0)+reps;
+    var dt=(S.days[iso()]||0)+reps;S.days[iso()]=dt;
     if(dt>(S.bestSession||0))S.bestSession=dt}
   if(!S.today.counted){S.sessions=(S.sessions||0)+1;S.today.counted=true}
-  if(it.k==="pushup"&&cur>=it.sets&&S.comebackLeft>0)S.comebackLeft--;
-  save();tone(660);
-  if(cur<it.sets){U.rest={end:Date.now()+it.rest*1e3,total:it.rest,ten:false,
-    say:it.k==="pushup"?(cur+1)+"라운드":it.n+" "+(cur+1)+"세트"};holdScreen(true);startTick()}
-  else{tone(880,.12,.16,.13);tone(1046,.18,.16,.26);say(it.n+" 끝났습니다")}
+  save()}
+
+/* ══ 전체 자동 진행 ════════════════════════════════════ */
+function workSec(it){if(it.timed)return it.reps;
+  return Math.max(6,Math.round(it.reps*(PERREP[it.k]||2.5))+4)}
+
+function startAuto(){
+  unlock();
+  var p=plan(),q=[];
+  p.items.forEach(function(it){
+    var already=S.today.done[it.k]||0;
+    for(var i=already;i<it.sets;i++)q.push({k:it.k,n:it.n,u:it.u,reps:it.reps,idx:i+1,sets:it.sets,
+      rest:it.rest,work:workSec(it),timed:!!it.timed,last:i===it.sets-1})});
+  if(!q.length)return;
+  U.auto={q:q,i:0,phase:"lead",end:Date.now()+5000,paused:false,left:0,ticked:{}};
+  holdScreen(true);
+  say(q[0].n+", "+q[0].reps+q[0].u+", 준비");
+  startTick();draw()}
+
+function autoAdvance(){
+  var A=U.auto,e=A.q[A.i];
+  if(A.phase==="lead"){A.phase="work";A.end=Date.now()+e.work*1e3;A.ticked={};
+    beep("go");say(e.timed?e.reps+"초 유지":"시작");return}
+  if(A.phase==="work"){
+    recordSet(e.k,e.reps);beep("done");
+    if(A.i>=A.q.length-1){finishAuto();return}
+    var nx=A.q[A.i+1];
+    if(e.last){A.phase="rest";A.end=Date.now()+Math.max(e.rest,30)*1e3;A.ticked={};
+      say("좋습니다. 다음은 "+nx.n)}
+    else{A.phase="rest";A.end=Date.now()+e.rest*1e3;A.ticked={};
+      say("휴식 "+e.rest+"초")}
+    return}
+  /* rest → 다음 세트 */
+  A.i++;A.phase="lead";A.end=Date.now()+5000;A.ticked={};
+  var c=A.q[A.i];
+  say(c.idx===1?c.n+", "+c.reps+c.u+", 준비":c.idx+(c.k==="pushup"?"라운드":"세트")+", 준비");}
+
+function finishAuto(){
+  U.auto=null;holdScreen(false);stopTick();
+  beep("end");
+  var t=S.days[iso()]||0;
+  say("오늘 운동 끝났습니다. 푸쉬업 "+t+"개.");
   draw()}
 
-function tapSet(it){wake();if(U.rest||U.work)return;
+function stopAuto(){U.auto=null;holdScreen(false);stopTick();draw()}
+
+/* ══ 수동 세트 ═════════════════════════════════════════ */
+function completeSet(it){
+  unlock();
+  var cur=(S.today.done[it.k]||0)+1;
+  recordSet(it.k,it.reps);beep("done");
+  if(cur<it.sets){U.rest={end:Date.now()+it.rest*1e3,total:it.rest,ten:false,
+    say:it.k==="pushup"?(cur+1)+"라운드":it.n+" "+(cur+1)+"세트"};holdScreen(true);startTick()}
+  else{beep("end");say(it.n+" 끝났습니다")}
+  draw()}
+
+function tapSet(it){unlock();if(U.rest||U.work)return;
   if(it.timed){say(it.reps+"초 유지");U.work={end:Date.now()+it.reps*1e3,total:it.reps,it:it,three:false};
     holdScreen(true);startTick();draw()}
   else completeSet(it)}
 
-function chooseRpe(k,r){wake();var it=null,p=plan();
+function chooseRpe(k,r){unlock();var it=null,p=plan();
   p.items.forEach(function(x){if(x.k===k)it=x});if(!it)return;
-  var done=(S.today.done[k]||0)>=it.sets,b=BOUNDS[k],
-      free=p.cb||p.dl||p.mn,bad=!done||r==="fail";
+  var done=(S.today.done[k]||0)>=it.sets,b=BOUNDS[k],free=p.cb||p.dl||p.mn,bad=!done||r==="fail";
   if(b){var mv=function(d){S[k].reps=Math.min(b.hi,Math.max(b.lo,S[k].reps+d*b.s))};
     if(bad){S.streaks[k]=0;if(!free)mv(-1)}
     else if(r==="hard")S.streaks[k]=0;
@@ -259,7 +527,7 @@ function chooseRpe(k,r){wake();var it=null,p=plan();
   S.log.unshift({d:iso(),k:k,r:it.reps,s:it.sets,done:S.today.done[k]||0,rpe:r});
   S.log=S.log.slice(0,800);save();draw()}
 
-function addExtra(n){wake();tone(660,.1);S.totalPush=(S.totalPush||0)+n;
+function addExtra(n){unlock();beep("done");S.totalPush=(S.totalPush||0)+n;
   var dt=(S.days[iso()]||0)+n;S.days[iso()]=dt;
   if(dt>(S.bestSession||0))S.bestSession=dt;S.lastSession=iso();save();draw()}
 
@@ -269,40 +537,98 @@ function saveTest(){var v=Math.max(1,Math.min(200,parseInt(U.testVal,10)||0));
   S.log.unshift({d:iso(),k:"test",r:v,s:1,done:1,rpe:"test"});S.log=S.log.slice(0,800);
   U.testVal="";save();say(v+"개 기록했습니다");draw()}
 
-/* ── 타이머 ── */
+/* ══ 타이머 루프 ═══════════════════════════════════════ */
 var tickId=null;
-function startTick(){if(tickId)return;tickId=setInterval(function(){
+function startTick(){if(tickId)return;
+  if(keep){try{var kp=keep.play();if(kp&&kp.catch)kp.catch(function(){})}catch(e){}}
+  tickId=setInterval(function(){
   var now=Date.now();
-  if(U.work){var L=(U.work.end-now)/1e3;
-    if(L<=3&&!U.work.three){U.work.three=true;tone(520,.07,.1)}
-    if(L<=0){var it=U.work.it;U.work=null;tone(760,.18);stopTick();completeSet(it);return}}
+  if(U.auto){var A=U.auto;if(A.paused){paintTimer();return}
+    var e=A.q[A.i],L=(A.end-now)/1e3,s=Math.ceil(L);
+    if(A.phase==="lead"&&s<=3&&s>=1&&!A.ticked[s]){A.ticked[s]=true;beep("tick");
+      if(S.countOn)sayNum(knum(s))}
+    if(A.phase==="work"){
+      if(e.timed){
+        if((s===30||s===20||s===10)&&!A.ticked["t"+s]){A.ticked["t"+s]=true;beep("tick");
+          if(S.countOn)sayNum(s+"초")}
+        if(s<=3&&s>=1&&!A.ticked["w"+s]){A.ticked["w"+s]=true;beep("tick");
+          if(S.countOn)sayNum(knum(s))}}
+      else{var rp=curRep(e,L);
+        if(rp>=1&&!A.ticked["p"+rp]){A.ticked["p"+rp]=true;if(S.countOn)sayNum(knum(rp))}
+        if(s<=2&&s>=1&&!A.ticked["w"+s]){A.ticked["w"+s]=true;beep("tick")}}}
+    if(A.phase==="rest"){
+      if(s===10&&A.end-now>0&&!A.ticked.r10){A.ticked.r10=true;beep("tick");say("10초")}
+      if(s<=3&&s>=1&&!A.ticked["c"+s]){A.ticked["c"+s]=true;beep("tick");
+        if(S.countOn)sayNum(knum(s))}}
+    if(L<=0){autoAdvance();draw();return}
+    paintTimer();return}
+  if(U.work){var W=(U.work.end-now)/1e3;
+    if(W<=3&&!U.work.three){U.work.three=true;beep("tick")}
+    if(W<=0){var it=U.work.it;U.work=null;stopTick();completeSet(it);return}}
   else if(U.rest){var R=(U.rest.end-now)/1e3;
-    if(R<=10&&U.rest.total>25&&!U.rest.ten){U.rest.ten=true;tone(520,.07,.1)}
-    if(R<=0){var sp=U.rest.say;U.rest=null;tone(880,.14);tone(880,.14,.16,.2);
-      if(sp)say(sp);stopTick();draw();return}}
+    if(R<=10&&U.rest.total>25&&!U.rest.ten){U.rest.ten=true;beep("tick")}
+    if(R<=0){var sp=U.rest.say;U.rest=null;beep("go");if(sp)say(sp);stopTick();draw();return}}
   else{stopTick();return}
   paintTimer()},100)}
 function stopTick(){if(tickId){clearInterval(tickId);tickId=null}
-  if(!U.rest&&!U.work)holdScreen(false)}
-function paintTimer(){var t=U.work||U.rest;if(!t)return;
-  var left=Math.max(0,Math.ceil((t.end-Date.now())/1e3));
-  var n=document.getElementById("tnum");if(n)n.textContent=left;
+  if(!U.rest&&!U.work&&!U.auto){holdScreen(false);
+    if(keep){try{keep.pause()}catch(e){}}}}
+function paintTimer(){
+  var t=U.auto||U.work||U.rest;if(!t)return;
+  var total=U.auto?(U.auto.phase==="lead"?5:U.auto.phase==="work"?U.auto.q[U.auto.i].work:
+    Math.max(U.auto.q[U.auto.i].rest,U.auto.q[U.auto.i].last?30:0)):t.total;
+  var left=U.auto&&U.auto.paused?U.auto.left:Math.max(0,Math.ceil((t.end-Date.now())/1e3));
+  var n=document.getElementById("tnum"),ph=document.getElementById("tphase");
+  if(U.auto&&U.auto.phase==="work"&&!U.auto.q[U.auto.i].timed){
+    var e=U.auto.q[U.auto.i],rp=curRep(e,left);
+    if(n)n.textContent=rp||"–";
+    if(ph)ph.textContent=rp?rp+" / "+e.reps+e.u:"준비"}
+  else if(n)n.textContent=left;
   var c=document.getElementById("tring");
-  if(c){var C=2*Math.PI*80;c.setAttribute("stroke-dashoffset",C*(1-left/t.total))}}
+  if(c&&!(U.auto&&U.auto.phase==="lead")){var r=U.auto?96:80,C=2*Math.PI*r;
+    c.setAttribute("stroke-dashoffset",C*(1-Math.min(1,left/(total||1))))}}
 
-/* ── 그리기 ── */
+/* ══ 그리기 ════════════════════════════════════════════ */
 function esc(x){return String(x).replace(/[&<>"]/g,function(c){
   return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
 function b(a,v,txt,cls,extra){return '<button class="'+cls+'" data-a="'+a+'"'+
   (v!==null&&v!==undefined?' data-v="'+esc(v)+'"':"")+(extra||"")+">"+txt+"</button>"}
+function ring(left,total,r,col){var C=2*Math.PI*r,sz=r*2+12;
+  return '<div class="ringwrap" style="width:'+sz+'px;height:'+sz+'px"><svg width="'+sz+'" height="'+sz+'">'+
+    '<circle cx="'+sz/2+'" cy="'+sz/2+'" r="'+r+'" fill="none" stroke="var(--line)" stroke-width="8"/>'+
+    '<circle id="tring" cx="'+sz/2+'" cy="'+sz/2+'" r="'+r+'" fill="none" stroke="'+col+'" stroke-width="8" '+
+    'stroke-linecap="round" stroke-dasharray="'+C+'" stroke-dashoffset="'+(C*(1-Math.min(1,left/(total||1))))+'"/></svg>'}
+
+function autoView(){
+  var A=U.auto,e=A.q[A.i];
+  var total=A.phase==="lead"?5:A.phase==="work"?e.work:Math.max(e.rest,e.last?30:0);
+  var left=A.paused?A.left:Math.max(0,Math.ceil((A.end-Date.now())/1e3));
+  var col=A.phase==="work"?"var(--amber)":A.phase==="lead"?"var(--sky)":"var(--muted)";
+  var counting=A.phase==="work"&&!e.timed,rp=counting?curRep(e,left):0;
+  var lab=A.paused?"멈춤":counting?(rp?rp+" / "+e.reps+e.u:"준비"):
+    A.phase==="work"?"유지":A.phase==="lead"?"준비":"휴식";
+  var nx=A.q[A.i+1];
+  var body=A.phase==="lead"
+    ? '<div class="lead">'+figSvg(e.k,e.k==="negative"?4:2.4)+
+      '<div class="cue">'+(FIG[e.k]?FIG[e.k].cue:"")+'</div>'+
+      '<div class="leadnum" id="tnum">'+left+'</div></div>'
+    : ring(left,total,96,col)+
+      '<div class="ringinner"><div class="big" id="tnum">'+(counting?(rp||"–"):left)+'</div>'+
+      '<div class="small" id="tphase">'+lab+'</div></div></div>';
+  return '<div class="auto"><div class="aset">'+(A.i+1)+' / '+A.q.length+' · '+
+    e.idx+(e.k==="pushup"?"라운드":"세트")+' / '+e.sets+'</div>'+
+    '<div class="aname">'+e.n+'</div>'+body+
+    '<div class="areps">'+e.reps+e.u+'</div>'+
+    '<div class="anext">'+(nx?"다음 · "+nx.n+" "+nx.idx+"/"+nx.sets:"마지막입니다")+'</div>'+
+    '<div class="actl">'+
+      b("anext",null,"끝냈음","go")+
+      b("apause",null,A.paused?"재개":"일시정지","")+
+      b("astop",null,"중단","")+
+    '</div></div>'}
 
 function timerHtml(){var t=U.work||U.rest;if(!t)return"";
-  var left=Math.max(0,Math.ceil((t.end-Date.now())/1e3)),C=2*Math.PI*80;
-  var col=U.work?"var(--sky)":"var(--amber)";
-  return '<div class="timer"><div class="ringwrap"><svg width="168" height="168">'+
-    '<circle cx="84" cy="84" r="80" fill="none" stroke="var(--line)" stroke-width="8"/>'+
-    '<circle id="tring" cx="84" cy="84" r="80" fill="none" stroke="'+col+'" stroke-width="8" '+
-    'stroke-linecap="round" stroke-dasharray="'+C+'" stroke-dashoffset="'+(C*(1-left/t.total))+'"/></svg>'+
+  var left=Math.max(0,Math.ceil((t.end-Date.now())/1e3));
+  return '<div class="timer">'+ring(left,t.total,80,U.work?"var(--sky)":"var(--amber)")+
     '<div class="ringinner"><div class="big" id="tnum">'+left+'</div>'+
     '<div class="small">'+(U.work?"유지":"휴식")+'</div></div></div>'+
     b("skip",null,U.work?"지금 끝내기":"휴식 건너뛰기","ghost")+'</div>'}
@@ -316,6 +642,9 @@ function exCard(it){
     '<div class="counter">'+done+'<span>/'+it.sets+'</span></div></div><div class="dots">';
   for(var i=0;i<it.sets;i++)h+='<div class="dot'+(i<done?" on":"")+'">'+(i+1)+'</div>';
   h+='</div>';
+  if(FIG[it.k]){h+=b("fig",it.k,U.fig===it.k?"동작 접기":"동작 보기","toggle");
+    if(U.fig===it.k)h+='<div class="figbox">'+figSvg(it.k)+
+      '<div class="cue">'+FIG[it.k].cue+'</div></div>'}
   if(!all)h+=b("set",it.k,(done+1)+(it.timed?unit+" 시작 ("+it.reps+"초)":unit+" 완료"),
     "primary wide",busy?" disabled":"");
   else if(hasR&&!rpe){h+='<div class="rpelabel">오늘 몸 상태</div><div class="rperow">';
@@ -332,10 +661,23 @@ function todayView(p){
   if(p.cb)h+='<div class="banner">며칠 쉬었으니 낮춰서 시작합니다. 앞으로 '+S.comebackLeft+'번은 줄인 채로 갑니다.</div>';
   else if(p.dl)h+='<div class="banner">이번 주는 덜 하는 것이 계획입니다. 목표를 30% 낮췄습니다.</div>';
   if(!p.items.length)return h+'<div class="restday"><div class="restday-h">완전 휴식</div>'+
-    '<p>오늘은 아무것도 하지 않는 것이 계획입니다. 매일 하는 프로젝트라 이 하루가 필요합니다.</p></div>';
-  if(!p.mn&&p.info.t==="main")h+=b("run",null,'<div><div class="cardname">러닝</div>'+
-    '<div class="cardsub">05:00 · 30~40분 · 대화 가능한 페이스</div></div>'+
-    '<div class="check'+(S.today.run?" on":"")+'">'+(S.today.run?"✓":"")+'</div>',"card run");
+    '<p>'+(S.autoRest?"5일 연속 하셨습니다. 오늘 쉬어야 다음 5일이 나옵니다.":
+      "오늘은 아무것도 하지 않는 것이 계획입니다.")+'</p></div>'+
+    b("min",null,"그래도 한 라운드만 하겠다","minimal");
+
+  var pl=p.items.reduce(function(a,i){return a+i.sets},0),
+      fi=p.items.reduce(function(a,i){return a+Math.min(i.sets,S.today.done[i.k]||0)},0);
+  if(fi<pl&&!U.rest&&!U.work)h+=b("astart",null,
+    (fi?"이어서 자동 진행":"전체 시작")+'<i>음성이 끝까지 안내합니다. 폰을 내려놓으세요</i>',"start");
+
+  if(!p.mn&&p.info.t==="main"){
+    h+=b("run",null,'<div><div class="cardname">러닝</div>'+
+      '<div class="cardsub">05:00 · 30~40분 · 대화 가능한 페이스</div></div>'+
+      '<div class="check'+(S.today.run?" on":"")+'">'+(S.today.run?"✓":"")+'</div>',"card run");
+    h+='<div class="card" style="margin-top:-6px">'+
+      b("fig","run",U.fig==="run"?"동작 접기":"러닝 자세 보기","toggle")+
+      (U.fig==="run"?'<div class="figbox">'+figSvg("run",1.2)+
+        '<div class="cue">'+FIG.run.cue+'</div></div>':"")+'</div>'}
   if(toTest()===0&&!p.mn)h+='<div class="card test"><div class="cardname">2주 최대 테스트</div>'+
     '<div class="cardsub">직전 '+S.maxPushup+'개 · 오늘 사다리 목표 '+maxTarget(p.day)+
     '개. 러닝 전에, 멈추지 않고 한 번만 잽니다.</div><div class="testrow">'+
@@ -345,31 +687,32 @@ function todayView(p){
   h+='<div class="card"><div class="cardname">틈틈이 채우기</div>'+
     '<div class="cardsub">목표에 모자라면 하루 중 아무 때나 더합니다. 빈도가 이 프로젝트의 핵심 레버입니다.</div>'+
     '<div class="addrow">'+[3,5,10].map(function(n){return b("add",n,"+"+n,"addbtn")}).join("")+'</div></div>';
-  var pl=p.items.reduce(function(a,i){return a+i.sets},0),
-      fi=p.items.reduce(function(a,i){return a+Math.min(i.sets,S.today.done[i.k]||0)},0);
-  if(pl&&fi>=pl)h+='<div class="card finish"><div class="cardname">끝. '+S.sessions+'번째 세션.</div>'+
+  if(pl&&fi>=pl){snapshot();
+    h+='<div class="card finish"><div class="cardname">끝. '+S.sessions+'번째 세션.</div>'+
     '<div class="cardsub">오늘 '+pt+'개 · 최고 한 세션 '+(S.bestSession||0)+'개'+
     (S.lastChange&&S.lastChange.d===iso()?" · "+S.lastChange.t:"")+'</div>'+
-    '<div class="cum">누적 '+(S.totalPush||0).toLocaleString()+'개</div></div>';
+    '<div class="cum">누적 '+(S.totalPush||0).toLocaleString()+'개</div>'+
+    '<div class="saved">기록이 아이폰에 저장됐습니다'+
+      (U.savedAt?' · '+U.savedAt.getHours()+':'+("0"+U.savedAt.getMinutes()).slice(-2):"")+'</div>'+
+    b("dl",null,"파일로도 남기기","toggle")+'</div>'}
   if(!fi&&!p.mn)h+=b("min",null,"오늘은 최소로 — 한 라운드만","minimal");
   return h}
 
 function journeyView(){
-  var day=dayNum(),trained=0,h="";
-  var cells="";
+  var day=dayNum(),trained=0,cells="",h="";
   for(var i=0;i<SPAN;i++){var n=i+1,d=addD(S.startDate,i),t=S.days[d]||0;
     if(n<=day&&t>0)trained++;
-    var c="cell"+(n===day?" now":n<day?(t>0?" did":" skip"):"")+(MILES[n]?" mile":"");
-    cells+='<div class="'+c+'">'+(MILES[n]?"<b>"+MILES[n]+"</b>":n===day?"<b>·</b>":"")+'</div>'}
+    cells+='<div class="cell'+(n===day?" now":n<day?(t>0?" did":" skip"):"")+(MILES[n]?" mile":"")+'">'+
+      (MILES[n]?"<b>"+MILES[n]+"</b>":n===day?"<b>·</b>":"")+'</div>'}
   h='<div class="card"><div class="cardname">'+day+'일차 / '+SPAN+'</div>'+
     '<div class="cardsub">운동한 날 '+trained+'일 · 최고 한 세션 '+(S.bestSession||0)+'개 · 목표 100개</div>'+
     '<div class="board">'+cells+'</div>'+
     '<div class="note">채워진 칸이 운동한 날입니다. 숫자 칸은 그날까지의 세션 목표입니다.</div></div>';
   h+='<div class="card"><div class="cardname">네 단계</div>';
   STAGES.forEach(function(st,i){var from=i?STAGES[i-1].to+1:1;
-    var stt=day>st.to?"지나옴":day>=from?"진행 중":"예정";
     h+='<div class="trow'+(day>=from&&day<=st.to?" on":"")+'"><div><b>'+st.name+'</b>'+
-      '<i>'+from+'~'+st.to+'일 · '+st.desc+'</i></div><div class="tright"><b>'+stt+'</b>'+
+      '<i>'+from+'~'+st.to+'일 · '+st.desc+'</i></div><div class="tright"><b>'+
+      (day>st.to?"지나옴":day>=from?"진행 중":"예정")+'</b>'+
       '<i>세션 '+(Math.round(interp(TA,st.to)/5)*5)+'개</i></div></div>'});
   h+='<div class="note">100일 목표는 한 자리에서 100개를 채우는 것입니다. 연속 100개는 이 100일이 '+
     '만들어주는 출발선입니다.</div></div>';
@@ -395,8 +738,7 @@ function logView(){
   var ds=Object.keys(S.days).sort().slice(-14);
   if(ds.length){h+='<div class="card"><div class="cardname">최근 '+ds.length+'일 푸쉬업</div><div class="daybars">';
     ds.forEach(function(d){h+='<div class="dbar"><div class="dfill" style="height:'+
-      Math.min(100,S.days[d]/100*100)+'%"></div><i>'+d.slice(8)+'</i></div>'});
-    h+='</div></div>'}
+      Math.min(100,S.days[d])+'%"></div><i>'+d.slice(8)+'</i></div>'});h+='</div></div>'}
   var by={};S.log.forEach(function(e){(by[e.d]=by[e.d]||[]).push(e)});
   var dates=Object.keys(by).sort().reverse().slice(0,30);
   if(!dates.length)return h+'<div class="empty">아직 기록이 없습니다.</div>';
@@ -408,7 +750,14 @@ function logView(){
   return h}
 
 function guideView(){
-  return '<div class="card"><div class="cardname">이 100일이 노리는 것</div>'+
+  return '<div class="card"><div class="cardname">소리 테스트</div>'+
+    '<div class="cardsub">누르면 소리가 두 번 납니다. 바로 한 번, 3초 뒤 한 번. '+
+    '앞은 나는데 뒤가 안 나면 타이머 소리가 막힌 것이고, 둘 다 안 나면 볼륨이나 측면 무음 스위치 문제입니다.</div>'+
+    b("snd_test",null,"알림음 + 음성 테스트","toggle")+
+    '<div class="note">개수 세기를 켜면 운동 중에 "하나, 둘, 셋"을 속도에 맞춰 읽어줍니다. '+
+    '준비와 휴식 끝 카운트도 숫자로 나옵니다.</div>'+
+    b("cnt",null,S.countOn?"개수 세기 켜짐":"개수 세기 꺼짐","toggle"+(S.countOn?" on":""))+'</div>'+
+  '<div class="card"><div class="cardname">이 100일이 노리는 것</div>'+
     '<div class="cardsub">한 자리에서 세트를 나눠 총 100개. 쉬지 않고 연속 100개가 아닙니다. '+
     '100일차 연속 최대 목표는 '+maxTarget(100)+'개입니다.</div></div>'+
   '<div class="card"><div class="cardname">클러스터 세트</div><ul class="std">'+
@@ -421,19 +770,43 @@ function guideView(){
   '<div class="card"><div class="cardname">멈춰야 할 때</div><div class="cardsub">매일 하는 계획이라 '+
     '팔꿈치와 손목이 먼저 옵니다. 날카로운 통증이 오면 그날은 중단하고, 이틀 이상 이어지면 100일 일정을 '+
     '포기하는 것이 맞습니다.</div></div>'+
-  '<div class="card"><div class="cardname">등 운동</div><div class="cardsub">푸쉬업만 매일 쌓으면 어깨가 '+
-    '앞으로 말립니다. 밴드 로우나 문틀 로우면 됩니다.</div>'+
-    b("row",null,S.rowOn?"루틴에 포함됨":"루틴에 추가하기","toggle"+(S.rowOn?" on":""))+'</div>'+
-  '<div class="card"><div class="cardname">백업</div><div class="cardsub">기록은 이 아이폰 안에만 있습니다. '+
-    '가끔 파일로 내려받아 두세요.'+(U.savedAt?" 마지막 저장 "+U.savedAt.getHours()+"시 "+
-    ("0"+U.savedAt.getMinutes()).slice(-2)+"분.":"")+'</div>'+
-    b("dl",null,"백업 파일 내려받기","toggle")+
+  '<div class="card"><div class="cardname">휴식</div>'+
+    (S.autoRest
+      ? '<div class="cardsub">요일로 정하지 않고 실제로 한 것을 보고 넣습니다. '+
+        '5일 연속 운동하면 그다음 날이 휴식, 3일째는 가벼운 날입니다. '+
+        '중간에 하루 건너뛰면 그게 휴식으로 쳐지고 다시 셉니다.</div>'+
+        '<div class="strk">'+[0,1,2,3,4].map(function(i){var st=streakDays();
+          return '<div class="sd'+(i<st?" on":"")+(i===2?" lt":"")+'"></div>'}).join("")+
+          '<div class="sd rst">쉼</div></div>'+
+        '<div class="cardsub">'+(streakDays()>=5?"연속 5일 했습니다. 오늘은 쉬는 날입니다.":
+          "연속 "+streakDays()+"일째 · "+(5-streakDays())+"일 더 하면 휴식")+'</div>'
+      : '<div class="cardsub">요일을 눌러 메인 → 가벼운 날 → 휴식 순으로 바꿉니다. '+
+        '지금은 주 '+trainDays()+'일 운동입니다.</div>'+
+        '<div class="wk">'+DN.map(function(n,i){var t=(S.week||WEEK_DEF)[i];
+          return b("wk",i,'<b>'+n+'</b><i>'+(t==="main"?"메인":t==="light"?"가볍게":"휴식")+'</i>',
+            "wkc "+t)}).join("")+'</div>'+
+        (trainDays()<6?'<div class="note">주 '+trainDays()+'일이면 100일 안에 한 세션 100개는 '+
+          '어렵습니다. 이 사다리는 주 6일을 전제로 계산됐습니다.</div>':''))+
+    b("arest",null,S.autoRest?"진행 상황에 맞춰 자동":"요일 고정","toggle"+(S.autoRest?" on":""))+'</div>'+
+  '<div class="card"><div class="cardname">밴드 운동</div><div class="cardsub">'+
+    '미는 동작만 매일 쌓으면 견갑골이 앞으로 말립니다. 켜면 풀어파트 20회×2가 준비운동으로, '+
+    '밴드 로우 '+S.row.reps+'회×'+S.row.sets+'가 메인 날에 들어갑니다. 밴드가 준비되면 켜세요.</div>'+
+    b("row",null,S.rowOn?"루틴에 포함됨":"루틴에 추가하기","toggle"+(S.rowOn?" on":""))+
+    '<div class="figbox">'+figSvg("pullapart")+'<div class="cue">'+FIG.pullapart.cue+'</div></div>'+
+    '<div class="figbox">'+figSvg("row")+'<div class="cue">'+FIG.row.cue+'</div></div></div>'+
+  '<div class="card"><div class="cardname">기록 보관</div>'+
+    '<div class="cardsub">저장하는 곳은 이 아이폰 두 군데(브라우저 저장소와 IndexedDB)입니다. '+
+    'GitHub에는 앱 코드만 있고 기록은 올라가지 않습니다. 세트를 누를 때마다, 앱을 내릴 때마다 자동 저장됩니다.</div>'+
+    '<div class="saved">'+(U.savedAt?"마지막 저장 "+U.savedAt.getHours()+":"+
+      ("0"+U.savedAt.getMinutes()).slice(-2):"이번 실행에서 아직 저장 없음")+
+      ' · 보관 중인 날짜별 스냅샷 '+snapCount()+'개</div>'+
+    '<div class="note">Safari 방문 기록·데이터 지우기를 하거나 폰을 바꾸면 두 저장소가 함께 사라집니다. '+
+    '2주에 한 번, 최대 테스트 하는 날 파일로 빼두세요.</div>'+
+    b("dl",null,"파일로 저장 (파일 앱 · iCloud)","toggle")+
     '<textarea class="dump" id="ps" placeholder="백업 JSON을 붙여넣고 아래를 누르면 복원됩니다"></textarea>'+
-    b("restore",null,"복원하기","toggle")+
-    (U.msg?'<div class="cardsub">'+esc(U.msg)+'</div>':"")+'</div>'+
+    b("restore",null,"복원하기","toggle")+(U.msg?'<div class="cardsub">'+esc(U.msg)+'</div>':"")+'</div>'+
   '<div class="card"><div class="cardname">05:00 알림</div><div class="cardsub">아이폰은 웹 앱이 예약 알림을 '+
-    '못 보냅니다. 러닝 알람은 시계 앱 알람에 매일 반복으로 걸어두세요. 기본 알람이 어떤 앱 알림보다 확실합니다.'+
-    '</div></div>'}
+    '못 보냅니다. 러닝 알람은 시계 앱 알람에 매일 반복으로 걸어두세요.</div></div>'}
 
 function draw(){
   var p=plan(),st=stageIdx(p.day);
@@ -444,9 +817,10 @@ function draw(){
     '<div class="daylabel">'+(p.mn?"최소":p.info.l)+'</div></div>'+
     b("snd",null,U.sound?"소리 켜짐":"소리 꺼짐","mute")+'</div>';
   if(U.err)h+='<div class="err">'+esc(U.err)+'</div>';
-  h+=timerHtml();
-  h+=U.tab==="today"?todayView(p):U.tab==="journey"?journeyView():U.tab==="log"?logView():guideView();
-  h+='<div class="tabs">'+[["today","오늘"],["journey","100일"],["log","기록"],["guide","기준"]]
+  if(U.auto)h+=autoView();
+  else{h+=timerHtml();
+    h+=U.tab==="today"?todayView(p):U.tab==="journey"?journeyView():U.tab==="log"?logView():guideView()}
+  if(!U.auto)h+='<div class="tabs">'+[["today","오늘"],["journey","100일"],["log","기록"],["guide","기준"]]
     .map(function(t){return b("tab",t[0],t[1],"tab"+(U.tab===t[0]?" on":""))}).join("")+'</div>';
   document.getElementById("root").innerHTML=h;
   var tv=document.getElementById("tv");
@@ -455,38 +829,68 @@ function draw(){
     if(U.focus==="tv"){tv.focus();tv.setSelectionRange(tv.value.length,tv.value.length)}
     tv.addEventListener("focus",function(){U.focus="tv"});
     tv.addEventListener("blur",function(){U.focus=null})}
-  var ps=document.getElementById("ps");if(ps){ps.value=U.paste;
-    ps.addEventListener("input",function(){U.paste=this.value})}}
+  var ps=document.getElementById("ps");
+  if(ps){ps.value=U.paste;ps.addEventListener("input",function(){U.paste=this.value})}}
 
 document.addEventListener("click",function(e){
   var t=e.target.closest("[data-a]");if(!t)return;
-  var a=t.getAttribute("data-a"),v=t.getAttribute("data-v"),p=plan();
-  if(a==="tab"){U.tab=v;wake();draw()}
-  else if(a==="snd"){U.sound=!U.sound;wake();draw()}
-  else if(a==="run"){wake();S.today.run=!S.today.run;save();draw()}
-  else if(a==="set"){p.items.forEach(function(it){if(it.k===v)tapSet(it)})}
+  var a=t.getAttribute("data-a"),v=t.getAttribute("data-v");
+  unlock();
+  if(a==="tab"){U.tab=v;draw()}
+  else if(a==="snd"){U.sound=!U.sound;draw()}
+  else if(a==="snd_test"){beep("go");say("바로 나는 소리입니다");
+    setTimeout(function(){beep("done");say("3초 뒤 소리입니다. 여기까지 들리면 정상입니다")},3000)}
+  else if(a==="astart"){startAuto()}
+  else if(a==="anext"){if(U.auto){U.auto.end=Date.now();U.auto.paused=false}}
+  else if(a==="apause"){if(U.auto){var A=U.auto;
+    if(A.paused){A.end=Date.now()+A.left*1e3;A.paused=false}
+    else{A.left=Math.max(0,Math.ceil((A.end-Date.now())/1e3));A.paused=true}draw()}}
+  else if(a==="astop"){stopAuto()}
+  else if(a==="run"){S.today.run=!S.today.run;save();draw()}
+  else if(a==="set"){plan().items.forEach(function(it){if(it.k===v)tapSet(it)})}
   else if(a==="rpe"){var q=v.split(":");chooseRpe(q[0],q[1])}
   else if(a==="add"){addExtra(parseInt(v,10))}
-  else if(a==="min"){wake();S.today.minimal=true;save();draw()}
+  else if(a==="min"){S.today.minimal=true;save();draw()}
   else if(a==="test"){saveTest()}
+  else if(a==="cnt"){S.countOn=!S.countOn;save();
+    if(S.countOn){sayNum("하나");setTimeout(function(){sayNum("둘")},900)}draw()}
+  else if(a==="fig"){U.fig=U.fig===v?null:v;draw()}
+  else if(a==="arest"){S.autoRest=!S.autoRest;save();draw()}
+  else if(a==="wk"){var wi=parseInt(v,10),w=(S.week||WEEK_DEF).slice();
+    w[wi]=CYCLE[(CYCLE.indexOf(w[wi])+1)%3];S.week=w;save();draw()}
   else if(a==="row"){S.rowOn=!S.rowOn;save();draw()}
-  else if(a==="skip"){if(U.work){var it=U.work.it;U.work=null;stopTick();completeSet(it)}
+  else if(a==="skip"){if(U.work){var it2=U.work.it;U.work=null;stopTick();completeSet(it2)}
     else{U.rest=null;stopTick();draw()}}
-  else if(a==="dl"){var blob=new Blob([JSON.stringify(S)],{type:"application/json"});
-    var url=URL.createObjectURL(blob),link=document.createElement("a");
-    link.href=url;link.download="pushup100-"+iso()+".json";document.body.appendChild(link);
-    link.click();link.remove();setTimeout(function(){URL.revokeObjectURL(url)},1e3)}
-  else if(a==="restore"){try{var r=JSON.parse(U.paste);S=migrate(r);
+  else if(a==="dl"){exportFile();draw()}
+  else if(a==="restore"){try{S=migrate(JSON.parse(U.paste));
     if(!S.today||S.today.date!==iso())S.today={date:iso(),done:{},rpe:{},run:false,minimal:false,counted:false};
     U.paste="";U.msg="복원했습니다";save()}catch(err){U.msg="읽을 수 없는 JSON입니다"}draw()}});
 
 document.addEventListener("visibilitychange",function(){
+  if(document.hidden){save();return}
   if(!document.hidden){if(S.today.date!==iso()){
     S.today={date:iso(),done:{},rpe:{},run:false,minimal:false,counted:false};save()}
-    if(U.rest||U.work)paintTimer();draw()}});
+    if(U.auto||U.rest||U.work)paintTimer();draw()}});
 
 if("serviceWorker" in navigator)navigator.serviceWorker.register("sw.js").catch(function(){});
+
+/* 브라우저에 "이 데이터는 지우지 말아달라"고 요청합니다 */
+try{if(navigator.storage&&navigator.storage.persist)navigator.storage.persist().catch(function(){})}catch(e){}
+
 draw();
+
+/* 두 저장소를 비교해 더 최신인 쪽으로 맞춥니다 */
+idbOpen().then(idbGet).then(function(txt){
+  if(txt){try{var o=JSON.parse(txt);
+    if((o.ts||0)>(S.ts||0)){S=migrate(o);
+      if(!S.today||S.today.date!==iso())
+        S.today={date:iso(),done:{},rpe:{},run:false,minimal:false,counted:false};
+      draw()}}catch(e){}}
+  try{idbPut(JSON.stringify(S))}catch(e){}});
+
+/* 앱을 내리거나 홈으로 나갈 때 한 번 더 */
+window.addEventListener("pagehide",function(){save()});
+window.addEventListener("blur",function(){save()});
 </script>
 </body>
 </html>
